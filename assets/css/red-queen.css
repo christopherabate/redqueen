@@ -1,0 +1,103 @@
+div.card-img-overlay div {
+  opacity: 0;
+}
+
+div.card-img-overlay div button{
+  transform: translateY(-50%);
+}
+
+.card:hover div.card-img-overlay div,
+.card:focus div.card-img-overlay div,
+.card:focus-within div.card-img-overlay div {
+  opacity: 1;
+}
+
+.card:hover div.card-img-overlay div button,
+.card:focus div.card-img-overlay div button,
+.card:focus-within div.card-img-overlay div button {
+  transform: translateY(0px);
+  transition: .25s ease-out;
+}
+
+.card:hover img,
+.card:focus img,
+.card:focus-within img {
+  opacity: .25;
+  transition: .25s ease-out;
+}
+
+.card-img-overlay div {
+  z-index: 3;
+}div.card-img-overlay div {
+  opacity: 0;
+}
+
+div.card-img-overlay div button{
+  transform: translateY(-50%);
+}
+
+.card:hover div.card-img-overlay div,
+.card:focus div.card-img-overlay div,
+.card:focus-within div.card-img-overlay div {
+  opacity: 1;
+}
+
+.card:hover div.card-img-overlay div button,
+.card:focus div.card-img-overlay div button,
+.card:focus-within div.card-img-overlay div button {
+  transform: translateY(0px);
+  transition: .25s ease-out;
+}
+
+.card:hover img,
+.card:focus img,
+.card:focus-within img {
+  opacity: .25;
+  transition: .25s ease-out;
+}
+
+.card-img-overlay div {
+  z-index: 3;
+}
+
+.btn.btn-secondary.dropdown-toggle:focus-visible,
+.btn.btn-primary.dropdown-toggle:focus-visible,
+.btn-outline-dark,
+.btn-dark {
+  color: none !important;
+  background-color: none !important;
+  border-color: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.nav-link,
+.nav-tabs {
+  --bs-nav-link-color: none !important;
+  --bs-nav-tabs-link-active-bg: none !important;
+}
+
+.border-bottom.nav-link {
+  border-bottom: none !important;
+}
+
+.nav-link.active {
+  color:  #e46701 !important;
+  background-color: none !important;
+  border-color: none !important;
+}
+
+.nav-tabs {
+  --bs-nav-tabs-border-width: none !important;
+}
+
+.img {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+}

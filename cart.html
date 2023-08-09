@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Red-queen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900" rel="stylesheet">
+    <link href="assets/css/red-queen.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <div id="cartToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-atomic="true" data-bs-autohide="false">
+        <div class="d-flex">
+          <div class="toast-body">
+            <i class="bi bi-bag-fill" role="img"></i>
+            An items has been added to your cart
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close cart notification"></button>
+        </div>
+      </div>
+      <div id="favToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-atomic="true" data-bs-autohide="false">
+        <div class="d-flex">
+          <div class="toast-body">
+            <i class="bi bi-heart-fill" role="img"></i>
+            An items has been added to your favourites
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close favourites notifications"></button>
+        </div>
+      </div>
+    </div>
+    <header role="banner">
+      <nav role="navigation" class="container skippy visually-hidden-focusable overflow-hidden" aria-label="Skip links">
+        <ul class="nav list-unstyled">
+          <li class="nav-item"><a class="nav-link" href="#">Go to main menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Go to content</a></li>
+        </ul>
+      </nav>
+      <nav role="navigation" class="navbar navbar-expand-sm bg-light border-top" aria-label="Language and currency choice">
+        <div class="container justify-content-end">
+          <ul class="nav">
+            <li class="dropdown">
+              <a class="btn btn-secondary btn-sm dropdown-toggle mx-2" href="#" aria-current="true" role="button" data-bs-toggle="dropdown" aria-label="English version">En</a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#" lang="fr" hreflang="fr" aria-label="Version française">Fr</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="btn btn-secondary btn-sm dropdown-toggle ms-1" href="#" aria-current="true" role="button" data-bs-toggle="dropdown" aria-label="Display prices in "><abbr title="Euro">EUR</abbr></a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#" lang="en" hreflang="en" aria-label="Display prices in Great Britain Pound"><abbr lang="en" title="Great Britain Pound">GBP</abbr></a></li>
+                  <li><a class="dropdown-item" href="#" lang="en" hreflang="en" aria-label="Display prices in United States Dollar"><abbr lang="en" title="United States Dollar">USD</abbr></a></li>
+                  <li><a class="dropdown-item" href="#" lang="en" hreflang="en" aria-label="Display prices in Canadian Dollar"><abbr lang="en" title="Canadian Dollar">CAD</abbr></a></li>
+              </ul>
+            </li>
+          </ul>
+          <a class="nav-link" display:none href="https://christopherabate.github.io/a11yce/cart.html">
+            <img src="assets/images/accessibility.png" aria-label="redirection vers le site de démo A11yce - panier" title="Redirection vers le site de démo A11yce - panier" role="img"/>
+          </a>
+        </div>
+      </nav>
+      <nav role="navigation" class="navbar navbar-expand-lg py-3" aria-label="Main navigation">
+        <div class="container">
+          <a class="navbar-brand fs-1 fw-lighter" href="./" style="font-family: 'Montserrat', sans-serif;"><span class="fw-bold">R</span>ed-Q<span class="fw-bold">u</span>ee<span class="fw-bold">n</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-label="Main navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item dropdown position-static">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">The Shop</a>
+                <div class="dropdown-menu w-100 mt-0 border-0 rounded-0 pb-2 text-bg-light">
+                  <div class="container">
+                    <div class="row row-cols-1">
+                      <div class="col mb-3">
+                        <p class="fw-bold text-uppercase fs-6">Categories</p>
+                        <ul class="nav flex-column">
+                          <li>
+                            <a href="#">Women</a>
+                          </li>
+                          <li>
+                            <a href="#">Men</a>
+                          </li>
+                          <li>
+                            <a href="#">Accessories</a>
+                          </li>
+                          <li>
+                            <a href="#">New</a>
+                          </li>
+                          <li>
+                            <a href="#">Trends</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col mb-3">
+                        <p class="fw-bold text-uppercase fs-6">Newsletter</p>
+                        <p>Subscribe to our newsletter and receive a 10% discount on your first order.</p>
+                        <form>
+                          <div class="input-group mb-3">
+                            <div class="form-floating">
+                              <input type="email" class="form-control" id="newsletter" required="required" placeholder="nom@exemple.com">
+                              <label for="newsletter">Email address</label>
+                            </div>
+                            <button class="btn btn-dark" type="submit">Subscribe <span class="visually-hidden">our newsletter</span></button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sales</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">The blog</a>
+              </li>
+            </ul>
+            <ul class="navbar-text flex-shrink list-inline mb-0">
+              <li class="list-inline-item">
+                <a href="search.html"><i class="bi bi-search" role="img" aria-label="Search"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"><i class="bi bi-person" role="img" aria-label="My account"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="position-relative">
+                  <i class="bi bi-heart text-danger" role="img" aria-label="My favourites"></i>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-dark">0 <span class="visually-hidden">item(s) in favourites</span></span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="cart.html" aria-current="page" class="position-relative">
+                  <i class="bi bi-bag text-warning" role="img" aria-label="My cart"></i>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-dark">3 <span class="visually-hidden">item(s) in cart</span></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="bg-light">
+      <h1 class="visually-hidden">Order</h1>
+      <div class="container py-5">
+        <div class="row row-cols-1 row-cols-lg-2">
+          <div class="col-lg-8 mb-3 order-2 order-lg-1">
+            <form class="needs-validation" novalidate>
+              <ul class="nav nav-tabs nav-tabs-light">
+                 <li class="nav-item">
+                  <h2 class="nav-link w-bold text-uppercase active" href="#" aria-current="page">Billing address</h2>
+                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link w-bold text-uppercase" href="#">Shipping address</a>
+                 </li>
+               </ul>       
+                    <!-- <h2 class="fw-bold text-uppercase">Adresse de facturation</h2> -->
+                    <div class="row gy-3 py-5">
+                      <div class="col-6">
+                        <span class="form-label"></label>
+                        <input type="text" class="form-control" id="first name" required="required" placeholder="Prénom" value="">
+                        <div class="invalid-feedback">
+                        Empty field
+                        </div>
+                      </div>
+
+                      <div class="col-6">
+                        <span class="form-label"></label>
+                        <input type="text" aria-label="nom" class="form-control" id="last name" required="required" placeholder="Nom" value="">
+                        <div class="invalid-feedback">
+                        Empty field
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="mail" aria-invalid="true" class="form-control" id="mail" required="required" placeholder="exemple: you@example.com">
+                        <div class="invalid-feedback">
+                          Error
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <label for="adresse" class="form-label">Adresse *</label>
+                        <input type="text" class="form-control" id="address" placeholder="exemple: 42 rue du handicap'" required="required">
+                        <div class="invalid-feedback">
+                          Error, type a valid input
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <input type="text" class="form-control" id="adresse 2" placeholder="Adresse 2">
+                      </div>
+
+                      <div class="col-5">
+                        <label for="Pays" required="required" class="form-label">Country</label>
+                        <select class="form-select" id="country">
+                          <option value="">Select...</option>
+                          <option>France</option>
+                          <option>England</option>
+                          <option>Japan</option>
+                          <option>Spain</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Select a country
+                        </div>
+                      </div>
+
+                      <div class="col-4">
+                        <label for="Région" required="required" class="form-label">Region *</label>
+                        <select class="form-select" id="state">
+                          <option value="">Select...</option>
+                          <option>Bretagne</option>
+                          <option>Other</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Error
+                        </div>
+                      </div>
+
+                      <div class="col-3">
+                        <label for="Code postal" class="form-label">Postcode *</label>
+                        <input type="text" class="form-control" required="required" id="zip" placeholder="example: 95110">
+                        <div class="invalid-feedback">
+                          Please, type a valid postcode
+                        </div>
+                      </div>
+                    </div>
+
+                <h2 class="fw-bold text-uppercase">Payment information</h2>
+                <div class="row gy-3 py-5">
+                  <div class="col-6">
+                    <label for="Nom présent sur la carte banquaire" class="form-label">Credit card holder name</label>
+                    <input type="text" class="form-control" aria-required="true" id="cc-name" placeholder="">
+                    <small class="text-muted">Full name present on the bank card.</small>
+                    <div class="invalid-feedback">
+                      Please indicate the full name on the credit card
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <label for="Numéro présent sur la carte banquaire" class="form-label">Credit card number</label>
+                    <input type="text" class="form-control" aria-required="true" id="cc-number" placeholder="example: 4976 4562 2356 4578">
+                    <small class="text-muted">Series of 16 digits indicated on the bank card.</small>
+                    <div class="invalid-feedback">
+                      Please enter the numbers on the credit card
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <label for="Date d'expiration de la carte bleu" aria-required="true" class="form-label">Expiration</label>
+                    <input type="text" class="form-control" id="cc-expiration" placeholder="example: 06/24">
+                    <div class="invalid-feedback">
+                      Please complete this field
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <label for="nombre">Select your CVV between 001 and 999:</label>
+                    <input type="range" id="nombre" name="nombre" min="1" max="999" value="1" step="1" oninput="updateOutput(this.value)">
+                    <output name="nombre" id="output">001</output>
+                    
+                    <script>
+                      var range = document.getElementById("nombre");
+                      var output = document.getElementById("output");
+                      
+                      output.innerHTML = ('00' + range.value).slice(-3);
+                      
+                      range.oninput = function() {
+                        output.innerHTML = ('00' + this.value).slice(-3);
+                      }
+                      
+                      function updateRange(event) {
+                        var step = parseInt(range.getAttribute('step')) || 1;
+                        var value = parseInt(range.value);
+                        switch (event.keyCode) {
+                          case 37: // flèche gauche
+                            value -= step;
+                            break;
+                          case 39: // flèche droite
+                            value += step;
+                            break;
+                        }
+                        if (value < parseInt(range.min)) {
+                          value = parseInt(range.min);
+                        } else if (value > parseInt(range.max)) {
+                          value = parseInt(range.max);
+                        }
+                        range.value = value;
+                        output.innerHTML = ('00' + value).slice(-3);
+                      }
+                      
+                      range.addEventListener('keydown', updateRange);
+                      </script>
+
+                    <!-- <label for="Numéro de CVV présent au dos de la carte bleu" class="form-label">CVV</label>
+                    <input type="text" class="form-control" id="cc-cvv" placeholder="exemple: 111">
+                    <div class="invalid-feedback">
+                      erreur
+                    </div> -->
+                  </div>
+                </div>
+              <button class="w-100 btn btn-primary btn-lg" type="submit">Validate payment</button>
+            </form>
+          </div>
+          <div class="col-lg-4 mb-3 order-1 order-lg-2">
+              <div class="fw-bold text-uppercase">My cart <span class="badge text-bg-dark rounded-pill align-top">3 <span class="visually-hidden">articles dans le panier</span></span></h2>
+              <ul class="list-group my-5">
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <p class="fw-bold product-name text-uppercase my-0">Sac cuir caramel</p>
+                  <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">63€</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <p class="fw-bold product-name text-uppercase my-0">Sac cuir caramel</p>
+                  <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">$8</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <p class="fw-bold product-name text-uppercase my-0">Sac cuir caramel</p>
+                  <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">$5</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between bg-light">
+                <div class="text-success">
+                  <h6 class="my-0">Promo code</h6>
+                  <small>MINUS10</small>
+                </div>
+                <span class="text-success">−$5</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Total (USD)</span>
+                <strong>$20</strong>
+              </li>
+            </ul>
+            <form class="card p-1 mb-5">
+              <div class="input-group">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="promo-code" required="required" placeholder="Code promo">
+                  <label for="promo-code">Promo code</label>
+                </div>
+                <button class="btn btn-dark" type="submit">Apply <span class="visually-hidden">promo code</span></button>
+              </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="border-top" role="contentinfo">
+      <div class="bg-light">
+        <div class="container py-5">
+          <h2 class="visually-hidden">Footer</h2>
+          <div class="row row-cols-1 row-cols-lg-4">
+            <div class="col mb-3">
+              <p class="fs-3 fw-lighter" style="font-family: 'Montserrat', sans-serif;"><span class="fw-bold">R</span>ed-Q<span class="fw-bold">u</span>ee<span class="fw-bold">n</span></p>
+              <p>This is a fake shop. It serves as a support for digital accessibility tests.</p>
+              <ul class="nav list-unstyled">
+                <li class="me-3"><a href="#"><i class="bi bi-twitter"></i></a></li>
+                <li class="me-3"><a href="#"><i class="bi bi-instagram"></i></a></li>
+                <li class="me-3"><a href="#"><i class="bi bi-facebook"></i></a></li>
+              </ul>
+            </div>
+            <div class="col mb-3 order-1">
+              <h3 class="fw-bold text-uppercase fs-6">Categories</h3>
+              <div class="nav flex-column">
+                  <a href="#">Women</a>
+                  <a href="#">Men</a>
+                  <a href="#">Accessories</a>
+                  <a href="#">New</a>
+                  <a href="#">Trends</a>
+              </div>
+            </div>
+            <div class="col mb-3 order-3">
+              <h3 class="fw-bold text-uppercase fs-6">Useful information</h3>
+              <div class="nav flex-column">
+                  <a href="#">Who are we?</a>
+                  <a href="#">Legal information</a>
+                  <a href="#">Shipping</a>
+                  <a href="#"><abbr title="Frequently asked questions">FAQ</abbr></a>
+                  <a href="#">Blog</a>
+                  <a href="#">Contact us</a>
+              </div>
+            </div>
+            <div class="col mb-3 order-2">
+              <h3 class="fw-bold text-uppercase fs-6">Newsletter</h3>
+              <span>Subscribe to our newsletter and receive a 10% discount on your first order.</span>
+              <form>
+                <div class="input-group mb-3">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="newsletter" required="required" placeholder="nom@exemple.com" autocomplete="e-mail">
+                    <label for="newsletter">Mail address</label>
+                  </div>
+                  <button class="btn btn-dark" type="submit">Subscribe <span>our newsletter</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container py-3" id="main-nav">
+        Photo crédits <a href="https://burst.shopify.com">Burst</a>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="assets/js/toast.js"></script>
+    <script src="assets/js/validate.js"></script>
+    <script src="assets/js/slider.js"></script>
+  </body>
+</html>
