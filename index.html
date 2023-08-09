@@ -1,0 +1,395 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900" rel="stylesheet">
+    <link href="assets/css/red-queen.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <div id="cartToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-atomic="true" data-bs-autohide="false">
+        <div class="d-flex">
+          <div class="toast-body">
+            <i class="bi bi-bag-fill" role="img"></i>
+            Added to your cart
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close cart notification"></button>
+        </div>
+      </div>
+      <div id="favToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-atomic="true" data-bs-autohide="false">
+        <div class="d-flex">
+          <div class="toast-body">
+            <i class="bi bi-heart-fill" role="img"></i>
+            Added to favorites
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close favorites notification"></button>
+        </div>
+      </div>
+    </div>
+    <header role="banner">
+      <nav role="navigation" class="container skippy visually-hidden-focusable overflow-hidden" aria-label="Skip links">
+        <ul class="nav list-unstyled">
+          <li class="nav-item"><a class="nav-link" href="#nouveautés">Go to main menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tendances">Go to trends</a></li>
+        </ul>
+      </nav>
+      <nav role="navigation" class="navbar navbar-expand-sm bg-light border-top" aria-label="Language and currency choice">
+        <div class="container justify-content-end">
+          <ul class="nav">
+            <li class="dropdown">
+              <a class="btn btn-secondary btn-sm dropdown-toggle mx-2" href="#" aria-current="true" data-bs-toggle="dropdown">En</a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#" lang="fr" hreflang="fr">Fr</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <button class="btn btn-secondary btn-sm dropdown-toggle ms-1" href="#" aria-current="true" data-bs-toggle="dropdown" aria-label="Display prices in Euro"><abbr title="Euro">EUR</abbr></button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                  <li><span class="dropdown-item" href="#" lang="fr" hreflang="fr" role="button" aria-label="Display prices in Great Britain Pound"><abbr lang="en" title="Great Britain Pound">GBP</abbr></span></li>
+                  <li><span class="dropdown-item" href="#" lang="fr" hreflang="fr" role="button" aria-label="Display prices in United States Dollar"><abbr lang="en" title="United States Dollar">USD</abbr></span></li>
+                  <li><span class="dropdown-item" href="#" lang="fr" hreflang="fr" role="button" aria-label="Display prices in Canadian Dollar"><abbr lang="en" title="Canadian Dollar">CAD</abbr></span></li>
+              </ul>
+            </li>
+          </ul>
+          <a class="nav-link" display:none href="https://christopherabate.github.io/a11yce/">
+            <img src="assets/images/accessibility.png" aria-label="redirect to A11yce" title="Redirect to A11yce" role="img"/>
+          </a>
+        </div>
+      </nav>
+      <nav role="navigation" class="navbar navbar-expand-lg py-3" aria-label="Main navigation">
+        <div class="container">
+          <a class="navbar-brand fs-1 fw-lighter" href="./" aria-current="page" style="font-family: 'Montserrat', sans-serif;"><span class="fw-bold">R</span>ed-Q<span class="fw-bold">u</span>ee<span class="fw-bold">n</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-label="Main navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item dropdown position-static">
+                <a class="nav-link active dropdown-toggle border-bottom border-3" href="#" aria-current="page" data-bs-toggle="dropdown" >The shop</a>
+                <div class="dropdown-menu w-100 mt-0 border-0 rounded-0 pb-2 text-bg-light">
+                  <div class="container">
+                    <div class="row row-cols-1">
+                      <div class="col mb-3">
+                        <p class="fw-bold text-uppercase fs-6">Categories</p>
+                        <div class="nav flex-column">
+                            <a href="#">Women</a>
+                            <a href="">Men</a>
+                            <a href="">Accessories</a>
+                            <a href="#">New</a>
+                            <a href="#">Trends</a>
+                        </div>
+                      </div>
+                      <div class="col mb-3">
+                        <p class="fw-bold text-uppercase fs-6">Newsletter</p>
+                        <p>Subscribe our newsletter and get 10% of your first order.</p>
+                        <form>
+                          <div class="input-group mb-3">
+                            <div class="form-floating">
+                              <input type="email" class="form-control" id="newsletter" required="required" placeholder="name@exemple.com">
+                            </div>
+                            <button class="btn btn-dark" type="submit">Subscribe <span class="visually-hidden">our newsletter</span></button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sales</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" tabindex="-1" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">The blog</a>
+              </li>
+            </ul>
+            <ul class="navbar-text flex-shrink list-inline mb-0">
+              <li class="list-inline-item">
+                <a href="search.html"><i class="bi bi-search" role="img" aria-label="Search"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"><i class="bi bi-person" role="img" aria-label="My account"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="position-relative">
+                  <i class="bi bi-heart text-danger" role="img" aria-label="My favourites"></i>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-dark">0 <span class="visually-hidden">item(s) in favourites</span></span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="cart.html" class="position-relative">
+                  <i class="bi bi-bag text-warning" role="img" aria-label="Mon panier"></i>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-dark">3 <span class="visually-hidden">item(s) in the cart</span></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main role="main">
+      <h4 class="visually-hidden">Red Queen Shop</h1>
+      <div style="background-image:url('assets/images/collection-2022-promo.jpg');background-size:cover;background-repeat:no-repeat;" class="position-relative py-5">
+        <div class="container py-5">
+              <h2>
+                <span class="d-block"><span class="text-bg-light lh-base fw-bold text-uppercase fs-6 px-2 py-1">Winter 2023 </span></span>
+                <span class="text-primary lh-base fs-1 px-2 py-1">New Collection</span>
+              </h2>
+              <a class="btn btn-dark stretched-link fw-bold" id="nouveautés" href="#">Explore the collection <span class="visually-hidden">winter 2023</span></a>
+        </div>
+      </div>
+      <div class="container py-5">
+        <h1 class="fw-bold text-uppercase">New</h2>
+        <a class="btn btn-outline-dark" href="#">See more</a>
+        <div class="row row-cols-1 row-cols-lg-2 g-3 py-3">
+          <div class="col">
+            <div class="row row-cols-1 row-cols-sm-2 g-3">
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <div class="position-relative">
+                    <a href="#" class="stretched-link" aria-label="Leather brown bag 63€ instead of 70€"><img src="assets/images/product-bag-1.jpg" class="card-img-top" alt="Leather brown bag"></a>
+                    <div class="card-img-overlay">
+                      <ul class="list-unstyled position-absolute top-0 end-0 m-3">
+                        <li><span class="badge rounded-pill text-bg-primary">New <span class="visually-hidden">product</span></span></li>
+                        <li><span class="badge rounded-pill text-bg-warning">10% <span class="visually-hidden">off</span></span></li>
+                      </ul>
+                      <div class="position-absolute top-50 start-50 translate-middle">
+                        <button type="button" class="btn btn-outline-dark fav-toast"><i class="bi bi-heart-fill" role="img" aria-label="Add Leather brown bag to favorites"></i></button>
+                        <button type="button" class="btn btn-outline-dark cart-toast"><i class="bi bi-bag-fill" role="img" aria-label="Add Leather brown bag to cart"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="fw-bold">
+                    <small class="d-block product-name text-uppercase">Leather brown bag</small>
+                    <span class="d-block product-price"><s class="fw-normal">70€</s> 63€</span> 
+                  </p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <div class="position-relative">
+                    <a href="#" class="stretched-link" aria-label="Sac cuir rouge 70€"><img src="assets/images/product-bag-2.jpg" class="card-img-top"></a>
+                    <div class="card-img-overlay">
+                      <ul class="list-unstyled position-absolute top-0 end-0 m-3">
+                        <li><span class="badge rounded-pill text-bg-primary">New <span class="visually-hidden">product</span></span></li>
+                      </ul>
+                      <div class="position-absolute top-50 start-50 translate-middle">
+                        <button type="button" class="btn btn-outline-dark fav-toast"><i class="bi bi-heart-fill" role="img" aria-label="Add Sac cuir rouge to favourites"></i></button>
+                        <button type="button" class="btn btn-outline-dark cart-toast"><i class="bi bi-bag-fill" role="img" aria-label="Add Sac cuir rouge to cart"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="fw-bold">
+                    <small class="d-block product-name text-uppercase">Leather red bag <span class="visually-hidden">70€</span></small>
+                    <span class="d-block product-price" aria-hidden="true">70€</span> 
+                  </p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <div class="position-relative">
+                    <a href="#" class="stretched-link" aria-label="Sac cuir noir 70€"><img src="assets/images/product-bag-3.jpg" class="card-img-top"></a>
+                    <div class="card-img-overlay">
+                      <ul class="list-unstyled position-absolute top-0 end-0 m-3">
+                        <li><span class="badge rounded-pill text-bg-primary">New <span class="visually-hidden">product</span></span></li>
+                      </ul>
+                      <div class="position-absolute top-50 start-50 translate-middle">
+                        <button type="button" class="btn btn-outline-dark fav-toast"><i class="bi bi-heart-fill" role="img" aria-label="Add Sac cuir noir to favourites"></i></button>
+                        <button type="button" class="btn btn-outline-dark cart-toast"><i class="bi bi-bag-fill" role="img" aria-label="Add Sac cuir noir to cart"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="fw-bold">
+                    <small class="d-block product-name text-uppercase">Leather black bag <span class="visually-hidden">70€</span></small>
+                    <span class="d-block product-price" aria-hidden="true">70€</span> 
+                  </p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <div class="position-relative">
+                    <a href="#" class="stretched-link" aria-label="Sac cuir marron 63€ au lieu de 70€"><img src="assets/images/product-bag-4.jpg" class="card-img-top" alt="image d'un sac"></a>
+                    <div class="card-img-overlay">
+                      <ul class="list-unstyled position-absolute top-0 end-0 m-3">
+                        <li><span class="badge rounded-pill text-bg-primary">New <span class="visually-hidden">product</span></span></li>
+                        <li><span class="badge rounded-pill text-bg-warning">10% <span class="visually-hidden">off</span></span></li>
+                      </ul>
+                      <div class="position-absolute top-50 start-50 translate-middle">
+                        <button type="button" class="btn btn-outline-dark fav-toast"><i class="bi bi-heart-fill" role="img" aria-label="Add Sac cuir marron to favourites"></i></button>
+                        <button type="button" class="btn btn-outline-dark cart-toast"><i class="bi bi-bag-fill" role="img" aria-label="Add Sac cuir marron to cart"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="fw-bold">
+                    <small class="d-block product-name text-uppercase">Leather brown bag <span class="visually-hidden">63€ instead of 70€</span></small>
+                    <span class="d-block product-price" aria-hidden="true"><s class="fw-normal">70€</s> 63€</span> 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-image:url('assets/images/image_Promo.jpg');background-size:cover;background-repeat:no-repeat;" class="position-relative h-100 rounded-top">
+              <div class="container py-5">
+                <a class="stretched-link" href="#"><span class="visually-hidden">promo picture</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="fw-bold text-uppercase">Trends</h2>
+        <a class="btn btn-outline-dark" href="#">See more</a>
+        <div class="row row-cols-1 row-cols-lg-2 g-3 py-3">
+          <div class="col">
+            <div class="row row-cols-1 row-cols-sm-2 g-3">
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <div class="position-relative">
+                    <a href="#" class="stretched-link" ><img src="assets/images/product-t-shirt-1.jpg" class="card-img-top" alt="T-shirt.jpg"></a>
+                    <div class="card-img-overlay">
+                      <ul class="list-unstyled position-absolute top-0 end-0 m-3">
+                        <li><span class="badge rounded-pill text-bg-warning">20% <span class="visually-hidden">off</span></span></li>
+                      </ul>
+                      <div class="position-absolute top-50 start-50 translate-middle">
+                        <button type="button" class="btn btn-outline-dark fav-toast"><i class="bi bi-heart-fill" role="img" aria-label="Add T-shirt vert to favourites"></i></button>
+                        <button type="button" class="btn btn-outline-dark cart-toast"><i class="bi bi-bag-fill" role="img" aria-label="Add T-shirt vert to cart"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="fw-bold">
+                    <small class="d-block product-name text-uppercase">T-shirt<span class="visually-hidden">16€ instead of 20€</span></small>
+                    <span class="d-block product-price" ><s class="fw-normal">20€</s> 16€</span> 
+                  </p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <div class="position-relative">
+                    <a href="#" class="stretched-link" aria-label="T-shirt violet 20€"><img src="assets/images/product-t-shirt-2.jpg" tabindex="2" class="card-img-top" alt=""></a>
+                    <div class="card-img-overlay">
+                      <div class="position-absolute top-50 start-50 translate-middle">
+                        <button type="button" class="btn btn-outline-dark fav-toast"><i class="bi bi-heart-fill" role="img" aria-label="Add T-shirt violet to favourites"></i></button>
+                        <button type="button" class="btn btn-outline-dark cart-toast"><i class="bi bi-bag-fill" role="img" aria-label="Add T-shirt violet to cart"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="fw-bold">
+                    <small class="d-block product-name text-uppercase">T-shirt<span class="visually-hidden">20€</span></small>
+                    <span class="d-block product-price" >20€</span> 
+                  </p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <div class="position-relative">
+                    <a href="#" class="stretched-link" aria-label="T-shirt bleu 20€"><img src="assets/images/product-t-shirt-3.jpg" class="card-img-top" alt=""></a>
+                    <div class="card-img-overlay">
+                      <div class="position-absolute top-50 start-50 translate-middle">
+                        <button type="button" class="btn btn-outline-dark fav-toast"><i class="bi bi-heart-fill" role="img" aria-label="Add T-shirt bleu to favourites"></i></button>
+                        <button type="button" class="btn btn-outline-dark cart-toast"><i class="bi bi-bag-fill" role="img" aria-label="Add T-shirt bleu to cart"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="fw-bold">
+                    <small class="d-block product-name text-uppercase">T-shirt<span class="visually-hidden">20€</span></small>
+                    <span class="d-block product-price" >20€</span> 
+                  </p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 border-0">
+                  <div class="position-relative">
+                    <a href="#" class="stretched-link" aria-label="T-shirt rouge 20€"><img src="assets/images/product-t-shirt-4-love.jpg" class="card-img-top"></a>
+                    <div class="card-img-overlay">
+                      <div class="position-absolute top-50 start-50 translate-middle">
+                        <button type="button" class="btn btn-outline-dark fav-toast"><i class="bi bi-heart-fill" role="img" aria-label="Add T-shirt rouge to favourites"></i></button>
+                        <button type="button" class="btn btn-outline-dark cart-toast"><i class="bi bi-bag-fill" role="img" aria-label="Add T-shirt rouge to cart"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="fw-bold">
+                    <small class="d-block product-name text-uppercase">T-shirt<span class="visually-hidden">20€</span></small>
+                    <span class="d-block product-price" >20€</span> 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-image:url('assets/images/collection-suit.jpg');background-size:cover;background-repeat:no-repeat;" class="position-relative h-100 rounded-top">
+              <div class="container py-5">
+                <h3>
+                  <span class="d-block"><span class="text-bg-light lh-base fw-bold text-uppercase fs-6 px-2 py-1">Suits </span></span>
+                  <span class="text-bg-light lh-base fs-1 px-2 py-1">Men</span>
+                </h3>
+                <a class="btn btn-dark stretched-link fw-bold" href="#">Explore the collection <span class="visually-hidden">men's suits</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="border-top" role="contentinfo">
+      <div class="bg-light">
+        <div class="container py-5">
+          <h2 class="visually-hidden">Footer</h2>
+          <div class="row row-cols-1 row-cols-lg-4">
+            <div class="col mb-3">
+              <p class="fs-3 fw-lighter" style="font-family: 'Montserrat', sans-serif;"><span class="fw-bold">R</span>ed-Q<span class="fw-bold">u</span>ee<span class="fw-bold">n</span></p>
+              <p>This is a fake shop. It serves as a support for digital accessibility tests.</p>
+              <ul class="nav list-unstyled">
+                <li class="me-3"><a href="#"><i class="bi bi-twitter"></i></a></li>
+                <li class="me-3"><a href="#"><i class="bi bi-instagram"></i></a></li>
+                <li class="me-3"><a href="#"><i class="bi bi-facebook"></i></a></li>
+              </ul>
+            </div>
+            <div class="col mb-3 order-1">
+              <h3 class="fw-bold text-uppercase fs-6">Categories</h3>
+              <div class="nav flex-column">
+                  <a href="#">Women</a>
+                  <a href="#">Men</a>
+                  <a href="#">Accessories</a>
+                  <a href="#">New</a>
+                  <a href="#">Trends</a>
+              </div>
+            </div>
+            <div class="col mb-3 order-3">
+              <h3 class="fw-bold text-uppercase fs-6">Useful information</h3>
+              <div class="nav flex-column">
+                  <a href="#">Who are we?</a>
+                  <a href="#">Legal information</a>
+                  <a href="#">Shipping</a>
+                  <a href="#"><abbr title="Frequently asked questions">FAQ</abbr></a>
+                  <a href="#">Blog</a>
+                  <a href="#">Contact us</a>
+              </div>
+            </div>
+            <div class="col mb-3 order-2">
+              <h3 class="fw-bold text-uppercase fs-6">Newsletter</h3>
+              <span>Subscribe to our newsletter and receive a 10% discount on your first order.</span>
+              <form>
+                <div class="input-group mb-3">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="newsletter" required="required" placeholder="nom@exemple.com" autocomplete="e-mail">
+                    <label for="newsletter">Mail address</label>
+                  </div>
+                  <button class="btn btn-dark" type="submit">Subscribe <span>our newsletter</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container py-3" id="main-nav">
+        Photo crédits <a href="https://burst.shopify.com">Burst</a>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="assets/js/toast.js"></script>
+  </body>
+</html>
